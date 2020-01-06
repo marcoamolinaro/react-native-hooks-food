@@ -14,3 +14,7 @@
 npm install react-navigation
 
 npx expo-cli install react-native-gesture-handler react-native-reanimated react-navigation-stack@1.10.3
+
+- Icons
+    github.com/expo/vector-icons
+
