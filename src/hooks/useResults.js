@@ -11,14 +11,13 @@ export default() => {
           params: {
             limit: 50,
             term: searchTerm,
-            location: 'rio de janeiro'
+            location: 'san jose'
           }
         });
         setResults(response.data.businesses);
       } catch (e) {
         setErrorMessage('Something went wrong!');
       }
-
     };
 
     useEffect(()=>{
