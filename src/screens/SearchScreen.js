@@ -8,8 +8,12 @@ const SearchScreen = () => {
     const [term, setTerm] = useState('');
     const [searchApi, results, errorMessage] = useResults();
 
-    console.log(results);
-    
+    const filterResultsByPrice = (price) => {
+        // price === '$' || === '$$' || === '$$$'
+        return results.filter(result => {
+            return result.price === price;
+        });
+    };
 
     return (
         <View>
@@ -20,9 +24,9 @@ const SearchScreen = () => {
             />
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <Text>We have found {results.length} results</Text>
-            <ResultList title="Cost Effective"/>
-            <ResultList title="Big Pricier"/>
-            <ResultList title="Big Spender"/>
+            <ResultList results={filterResultsByPrice('$')} title="Cost Effective"/>
+            <ResultList results={filterResultsByPrice('$$')} title="Big Pricier"/>
+            <ResultList results={filterResultsByPrice('$$$')} title="Big Spender"/>
         </View>
     );
 };
