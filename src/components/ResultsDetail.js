@@ -5,7 +5,12 @@ import ResultList from './ResultList';
 const ResultsDetail = ({ result }) => {
     return (
         <View style={styles.containerStyle}>
-            <Image style={styles.imageStyle} source={{ uri: result.image_url }}/>
+            <Image 
+                style={styles.imageStyle} 
+                source={result.image_url ? 
+                        {uri: result.image_url} : 
+                         require('../../assets/missing_image.png')}
+            />
             <Text style={styles.nameStyle}>{result.name}</Text>
             <Text>
                 {result.rating} Stars, {result.review_count} Reviews
@@ -19,7 +24,7 @@ const styles=StyleSheet.create({
         marginLeft: 15
     },
     imageStyle: {
-        width: 180,
+        width: 200,
         height: 120,
         borderRadius: 4,
         marginBottom: 5
