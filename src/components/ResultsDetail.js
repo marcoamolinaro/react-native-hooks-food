@@ -4,7 +4,7 @@ import ResultList from './ResultList';
 
 const ResultsDetail = ({ result }) => {
     return (
-        <View>
+        <View style={styles.containerStyle}>
             <Image style={styles.imageStyle} source={{ uri: result.image_url }}/>
             <Text style={styles.nameStyle}>{result.name}</Text>
             <Text>
@@ -15,10 +15,14 @@ const ResultsDetail = ({ result }) => {
 };
 
 const styles=StyleSheet.create({
+    containerStyle: {
+        marginLeft: 15
+    },
     imageStyle: {
-        width: 200,
+        width: 180,
         height: 120,
-        borderRadius: 4
+        borderRadius: 4,
+        marginBottom: 5
     },
     nameStyle: {
         fontWeight: 'bold',
